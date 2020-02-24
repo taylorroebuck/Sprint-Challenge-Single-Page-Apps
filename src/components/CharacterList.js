@@ -1,7 +1,16 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import styled from "styled-components";
 import CharacterCard from "./CharacterCard";
+
+const CharacterDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: justify;
+  background: grey;
+`
 
 export default function CharacterList() {
   const [characters, setCharacters] = useState([]);
@@ -20,10 +29,10 @@ export default function CharacterList() {
   }, []);
 
   return (
-    <div className="character-list">
+    <CharacterDiv className="character-list">
         {characters.map(obj => {
           return <CharacterCard obj={obj} key={obj.id} />;
         })}
-    </div>
+    </CharacterDiv>
   );
 }
