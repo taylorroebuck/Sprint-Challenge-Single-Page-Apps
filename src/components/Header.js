@@ -32,6 +32,7 @@ export default function Header() {
       <nav className="headerNav">
         <NavLink to="/">Home </NavLink>
         <NavLink to="/characters">Characters </NavLink>
+        <NavLink to="/locations">Locations </NavLink>
       </nav>
     </StyledHeader>
   );
