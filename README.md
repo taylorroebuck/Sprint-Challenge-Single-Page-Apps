@@ -25,9 +25,10 @@ In this challenge, you will create a Single Page Application complete with Clien
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question.
 
-- [ ]  Explain benefit(s) using `client-side routing`?
+- [X]  Explain benefit(s) using `client-side routing`?
 
 > Answer:
+Client-side routing offers control over your site URL and content without necessarily having to wait for a server to respond. The page doesn't refresh, the data is just there and displayed when we ask for it.
 
 ## Project Set Up
 
@@ -40,8 +41,8 @@ Follow these steps to set up and work on your project:
 - [X]  Implement the project on this branch, committing changes regularly.
 - [X]  Push commits: `git push origin <firstName-lastName>`.
 - [X]  **LOOK** at your project directory and notice it's just a plain ol' React App that we've built using `create-react-app`.
-- [ ]  **RUN** `yarn install` or `npm install` to retrieve the client-side dependencies.
-- [ ]  **RUN** `yarn start` or `npm start` to fire up your React application.
+- [X]  **RUN** `yarn install` or `npm install` to retrieve the client-side dependencies.
+- [X]  **RUN** `yarn start` or `npm start` to fire up your React application.
 
 ### Exceeded rate limits?
 
