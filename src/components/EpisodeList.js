@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import LocationCard from "./LocationCard";
+import EpisodeCard from "./EpisodeCard";
 import SearchForm from "./SearchForm";
 
-const LocationDiv = styled.div`
+const EpisodeDiv = styled.div`
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -14,19 +14,19 @@ const LocationDiv = styled.div`
   padding: 1.5%;
 `
 
-export default function LocationsList() {
-    const [locations, setLocations] = useState([]);
+export default function EpisodeList() {
+    const [episodes, setEpisodes] = useState([]);
     const [query, setQuery] = useState("");
 
     useEffect(() => {
         axios
-            .get("https://rickandmortyapi.com/api/location/")
+            .get("https://rickandmortyapi.com/api/episode/")
             .then(response => {
                 console.log(response);
-                const locations = response.data.results.filter(obj =>
+                const episodes = response.data.results.filter(obj =>
                     obj.name.toLowerCase().includes(query.toLowerCase())
                 );
-                setLocations(locations);
+                setEpisodes(episodes);
             })
             .catch(error => {
                 console.log("The data was not returned", error);
@@ -34,11 +34,11 @@ export default function LocationsList() {
     }, [query]);
 
     return (
-        <LocationDiv>
+        <EpisodeDiv>
             <SearchForm query={query} setQuery={setQuery} />
-            {locations.map(obj => {
-                return <LocationCard obj={obj} key={obj.id} />;
+            {episodes.map(obj => {
+                return <EpisodeCard obj={obj} key={obj.id} />;
             })}
-        </LocationDiv>
+        </EpisodeDiv>
     );
 }
